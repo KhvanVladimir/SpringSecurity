@@ -10,7 +10,6 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "name")
     private String firstName;
     @Column(name = "password")
@@ -24,8 +23,6 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
-
-
     public User() {
     }
 
@@ -63,8 +60,8 @@ public class User {
         return roles;
     }
 
-    public void setRoles(Collection<Role> rolesl) {
-        this.roles = rolesl;
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public String getLastName() {
